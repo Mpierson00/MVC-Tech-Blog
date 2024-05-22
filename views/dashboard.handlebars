@@ -1,0 +1,20 @@
+{{!-- Extend the main layout --}}
+{{#extend "layouts/main"}}
+    {{#content "content"}}
+        <h1>Welcome, {{user.username}}!</h1>
+        <h2>Your Dashboard</h2>
+        <div class="posts">
+            <h3>Your Posts:</h3>
+            {{#if user.posts.length}}
+                {{#each user.posts}}
+                    <div class="post">
+                        <h4>{{title}}</h4>
+                        <p>{{content}}</p>
+                    </div>
+                {{/each}}
+            {{else}}
+                <p>No posts yet.</p>
+            {{/if}}
+        </div>
+    {{/content}}
+{{/extend}}
