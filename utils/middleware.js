@@ -1,7 +1,7 @@
 const express = require('express');
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const sequelize = require('./connection');
+const sequelize = require('../config/connection');
 
 const app = express();
 
@@ -19,13 +19,14 @@ app.use(session({
   })
 }));
 
-// Custom authentication middleware
-const authenticateUser = (req, res, next) => {
-  if (req.session.loggedIn) {
-    next();
+// Authentication middleware
+const withAuth = (req, res, next) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login');
   } else {
-    res.status(401).json({ message: 'Unauthorized' });
+    console.log('User is logged in:', req.session.user_id); // Debugging line
+    next();
   }
 };
 
-module.exports = { authenticateUser };
+module.exports = withAuth;

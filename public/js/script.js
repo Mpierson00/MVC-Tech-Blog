@@ -78,12 +78,6 @@ const newPostFormHandler = async (event) => {
   }
 };
 
-// Event listener for new post form
-const newPostForm = document.querySelector("#new-post-form");
-if (newPostForm) {
-  newPostForm.addEventListener("submit", newPostFormHandler);
-}
-
 // Function to handle submitting a new comment
 const commentFormHandler = async (event) => {
   event.preventDefault();
@@ -121,12 +115,12 @@ const logoutBtn = document.querySelector("#logout-btn");
 if (logoutBtn) {
   logoutBtn.addEventListener("click", logoutHandler);
 }
-// Event listener for new post form
+
 const newPostForm = document.querySelector("#new-post-form");
 if (newPostForm) {
   newPostForm.addEventListener("submit", newPostFormHandler);
 }
-// Event listener for comment form
+
 const commentForm = document.querySelector("#comment-form");
 if (commentForm) {
   commentForm.addEventListener("submit", commentFormHandler);
