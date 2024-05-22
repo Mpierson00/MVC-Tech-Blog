@@ -2,9 +2,9 @@
 {{#extend "layouts/main"}}
     {{#content "content"}}
         <h1>Sign Up</h1>
-        <form action="/api/users" method="POST">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
+        <form id="signup-form">
+            <input type="text" id="username-signup" placeholder="Username" required>
+            <input type="password" id="password-signup" placeholder="Password" required>
             <button type="submit">Sign Up</button>
         </form>
     {{/content}}
