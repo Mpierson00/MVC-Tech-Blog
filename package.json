@@ -4,8 +4,7 @@
   "description": "A CMS-style blog site where developers can publish their blog posts and comment on other developers' posts.",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "heroku-postbuild": "npm install && npm run build"
+    "start": "node server.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -19,6 +18,6 @@
     "sequelize": "^6.6.5"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": "14.x"
   }
 }
