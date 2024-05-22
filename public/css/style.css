@@ -1,53 +1,64 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f9;
-  }
-  
-  nav {
-    background-color: #343a40;
-  }
-  
-  nav .navbar-nav .nav-link {
-    color: #fff !important;
-  }
-  
-  h1 {
-    text-align: center;
-    margin-top: 20px;
-    color: #333;
-  }
-  
-  .posts {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 0 20px;
-  }
-  
-  .post-card {
-    background-color: #fff;
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  
-  .post-card h2 {
-    margin-top: 0;
-  }
-  
-  .post-card p {
-    color: #666;
-  }
-  
-  @media (max-width: 600px) {
-    nav .navbar-nav {
-      flex-direction: column;
-    }
-  
-    nav .nav-item {
-      margin-bottom: 10px;
-    }
-  }
-  
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('/images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #f0f0f0;
+}
+
+.navbar {
+  background-color: #222 !important;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+h1, h2, h3 {
+  color: #f0f0f0;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.post-card {
+  background-color: #333;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.post-card h2 {
+  margin-top: 0;
+}
+
+.post-card p {
+  color: #ccc;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.form-group input, .form-group textarea {
+  background-color: #444;
+  border: 1px solid #555;
+  color: #f0f0f0;
+}
+
+.form-group input::placeholder, .form-group textarea::placeholder {
+  color: #ccc;
+}

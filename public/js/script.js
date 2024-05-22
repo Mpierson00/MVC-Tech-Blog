@@ -78,8 +78,6 @@ const newPostFormHandler = async (event) => {
   }
 };
 
-
-
 // Event listeners
 const signupForm = document.querySelector('#signup-form');
 if (signupForm) {
