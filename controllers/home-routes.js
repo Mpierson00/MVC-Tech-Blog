@@ -24,7 +24,7 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('login', { loggedIn: req.session.loggedIn });
+  res.render('login');
 });
 
 // Signup route
@@ -34,7 +34,7 @@ router.get('/signup', (req, res) => {
     return;
   }
 
-  res.render('signup', { loggedIn: req.session.loggedIn });
+  res.render('signup');
 });
 
 // Dashboard route
@@ -44,6 +44,11 @@ router.get('/dashboard', async (req, res) => {
       attributes: { exclude: ['password'] },
       include: [{ model: Post }]
     });
+
+    if (!userData) {
+      res.status(404).json({ message: 'No user found with this id!' });
+      return;
+    }
 
     const user = userData.get({ plain: true });
     res.render('dashboard', { user, loggedIn: req.session.loggedIn });

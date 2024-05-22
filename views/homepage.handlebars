@@ -1,19 +1,12 @@
-{{!-- Extend the main layout --}}
-{{#extend "layouts/main"}}
-    {{#content "content"}}
-        {{#if loggedIn}}
-            <h1>Welcome to the Tech Blog!</h1>
-            <div class="posts">
-                {{#each posts}}
-                    <div class="post">
-                        <h2>{{title}}</h2>
-                        <p>By {{user.username}} on {{created_at}}</p>
-                        <p>{{content}}</p>
-                    </div>
-                {{/each}}
-            </div>
-        {{else}}
-            <h1>Please log in to view posts</h1>
-        {{/if}}
-    {{/content}}
+{{#extend "content"}}
+  {{#if loggedIn}}
+    <h1>Welcome to the Tech Blog!</h1>
+    <div class="posts">
+      {{#each posts}}
+        {{> post-card this}}
+      {{/each}}
+    </div>
+  {{else}}
+    <h1>Please log in to view posts</h1>
+  {{/if}}
 {{/extend}}

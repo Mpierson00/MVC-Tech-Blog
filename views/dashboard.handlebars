@@ -1,20 +1,22 @@
-{{!-- Extend the main layout --}}
-{{#extend "layouts/main"}}
-    {{#content "content"}}
-        <h1>Welcome, {{user.username}}!</h1>
-        <h2>Your Dashboard</h2>
-        <div class="posts">
-            <h3>Your Posts:</h3>
-            {{#if user.posts.length}}
-                {{#each user.posts}}
-                    <div class="post">
-                        <h4>{{title}}</h4>
-                        <p>{{content}}</p>
-                    </div>
-                {{/each}}
-            {{else}}
-                <p>No posts yet.</p>
-            {{/if}}
-        </div>
-    {{/content}}
+{{#extend "content"}}
+  <h1>Welcome, {{user.username}}!</h1>
+  <h2>Your Dashboard</h2>
+  <div class="posts">
+    <h3>Your Posts:</h3>
+    {{#if user.posts.length}}
+      {{#each user.posts}}
+        {{> post-card this}}
+      {{/each}}
+    {{else}}
+      <p>No posts yet.</p>
+    {{/if}}
+  </div>
+  <div class="new-post">
+    <h3>Create a New Post</h3>
+    <form id="new-post-form">
+      <input type="text" id="post-title" placeholder="Post Title" required>
+      <textarea id="post-content" placeholder="Post Content" required></textarea>
+      <button type="submit">Create Post</button>
+    </form>
+  </div>
 {{/extend}}

@@ -1,40 +1,53 @@
-/* public/css/style.css */
-
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
-}
-
-nav {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
-}
-
-nav li {
-    display: inline;
-}
-
-nav a, nav button {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
-    display: inline-block;
-    background-color: #444;
-    border: none;
-    cursor: pointer;
-}
-
-nav a:hover, nav button:hover {
-    background-color: #555;
-}
+    background-color: #f4f4f9;
+  }
+  
+  nav {
+    background-color: #343a40;
+  }
+  
+  nav .navbar-nav .nav-link {
+    color: #fff !important;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  .posts {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  
+  .post-card {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .post-card h2 {
+    margin-top: 0;
+  }
+  
+  .post-card p {
+    color: #666;
+  }
+  
+  @media (max-width: 600px) {
+    nav .navbar-nav {
+      flex-direction: column;
+    }
+  
+    nav .nav-item {
+      margin-bottom: 10px;
+    }
+  }
+  
