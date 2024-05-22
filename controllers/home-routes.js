@@ -24,7 +24,7 @@ router.get('/login', (req, res) => {
     return;
   }
 
-  res.render('login');
+  res.render('login', { loggedIn: req.session.loggedIn });
 });
 
 // Signup route
@@ -34,7 +34,7 @@ router.get('/signup', (req, res) => {
     return;
   }
 
-  res.render('signup');
+  res.render('signup', { loggedIn: req.session.loggedIn });
 });
 
 // Dashboard route
