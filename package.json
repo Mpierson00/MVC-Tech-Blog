@@ -1,4 +1,12 @@
 {
+  "name": "mvc-tech-blog",
+  "version": "1.0.0",
+  "description": "A CMS-style blog site where developers can publish their blog posts and comment on other developers' posts.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "heroku-postbuild": "npm install && npm run build"
+  },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.0.4",
@@ -9,5 +17,8 @@
     "express-session": "^1.18.0",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.5"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
