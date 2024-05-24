@@ -1,35 +1,22 @@
-{{#extend "main"}}
-  <div class="container mt-5">
-    <div class="post-card">
-      <h2>{{title}}</h2>
-      <p>By {{user.username}} on {{created_at}}</p>
-      <p>{{content}}</p>
-    </div>
-    <div class="comments mt-4">
-      <h3>Comments</h3>
-      {{#if comments.length}}
-        {{#each comments}}
-          <div class="comment">
-            <p><strong>{{user.username}}:</strong> {{comment_text}}</p>
-            <p><small>{{created_at}}</small></p>
-          </div>
-        {{/each}}
-      {{else}}
-        <p>No comments yet.</p>
-      {{/if}}
-    </div>
-    {{#if loggedIn}}
-      <div class="new-comment mt-4">
-        <h4>Leave a Comment</h4>
-        <form id="comment-form">
-          <div class="form-group">
-            <textarea id="comment-text" class="form-control" placeholder="Your comment" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+<main class="container">
+  <h1>{{title}}</h1>
+  <p>By {{user.username}} on {{createdAt}}</p>
+  <div>{{content}}</div>
+
+  <section>
+    <h2>Comments</h2>
+    {{#each comments}}
+      <div>
+        <p>{{comment_text}}</p>
+        <p>By {{user.username}} on {{created_at}}</p>
       </div>
-    {{else}}
-      <p>Please log in to leave a comment.</p>
+    {{/each}}
+
+    {{#if loggedIn}}
+      <form id="comment-form">
+        <textarea id="comment-text" name="comment_text" placeholder="Add a comment..."></textarea>
+        <button type="submit">Submit</button>
+      </form>
     {{/if}}
-  </div>
-{{/extend}}
+  </section>
+</main>

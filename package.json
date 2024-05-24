@@ -14,9 +14,10 @@
     "express-handlebars": "^5.3.5",
     "express-handlebars-layouts": "^1.0.0",
     "express-session": "^1.18.0",
+    "fs": "^0.0.1-security",
+    "handlebars": "^4.7.8",
     "mysql2": "^3.9.7",
-    "sequelize": "^6.6.5",
-    "handlebars": "^4.7.8"
+    "sequelize": "^6.6.5"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
