@@ -1,26 +1,5 @@
-<main class="container">
-  <h1>{{title}}</h1>
-  <p>By {{user.username}} on {{createdAt}}</p>
-  <div>{{content}}</div>
-
-  <section>
-    <h2>Comments</h2>
-    {{#each comments}}
-      <div>
-        <p>{{comment_text}}</p>
-        <p>By {{user.username}} on {{created_at}}</p>
-      </div>
-    {{/each}}
-
-    {{#if loggedIn}}
-      <form id="comment-form">
-        <textarea
-          id="comment-text"
-          name="comment_text"
-          placeholder="Add a comment..."
-        ></textarea>
-        <button type="submit">Submit</button>
-      </form>
-    {{/if}}
-  </section>
-</main>
+<div class="post-card">
+  <h2>{{title}}</h2>
+  <p>{{content}}</p>
+  <a href="/post/{{id}}">View Post</a>
+</div>

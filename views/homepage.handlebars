@@ -1,11 +1,11 @@
-  {{#if loggedIn}}
-    <h1>Welcome to the Tech Blog!</h1>
-    <div class="posts">
-      {{#each posts}}
-        {{> post-card this}}
-      {{/each}}
-    </div>
-  {{else}}
-    <h1>Please log in to view posts</h1>
-  {{/if}}
-
+{{#if loggedIn}}
+  <h1>Welcome, {{username}}</h1>
+  <div>
+    {{#each posts}}
+      {{> post-card}}
+    {{/each}}
+  </div>
+{{else}}
+  <h1>Welcome to our blog!</h1>
+  <p>Please <a href="/login">login</a> or <a href="/signup">sign up</a> to view and comment on posts.</p>
+{{/if}}

@@ -1,84 +1,186 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin: 0;
-  padding: 0;
-  background: url('/images/background.jpg') no-repeat center center fixed;
+  font-family: Arial, sans-serif;
+  background-image: url('/images/background.jpg');
   background-size: cover;
-  color: #f0f0f0;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.navbar {
-  background-color: #222 !important;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
-.navbar-brand {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-h1, h2, h3 {
-  color: #f0f0f0;
-}
-
-.container {
-  background-color: rgba(0, 0, 0, 0.7);
+main {
+  flex: 1;
+  max-width: 1200px;
+  margin: 20px auto;
   padding: 20px;
-  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  margin-top: auto;
+}
+
+/* Other existing styles */
+header {
+  background: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+
+header nav a:hover {
+  background: #555;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .post-card {
-  background-color: #333;
+  border: 1px solid #ddd;
   margin-bottom: 20px;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  background: #fff;
+  border-radius: 5px;
 }
 
-.post-card h2 {
-  margin-top: 0;
+.post-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 24px;
 }
 
 .post-card p {
-  color: #ccc;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
-.btn-primary {
-  background-color: #007bff;
+.post-card button {
+  background: #007bff;
+  color: #fff;
   border: none;
   padding: 10px 20px;
-  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
-.btn-primary:hover {
-  background-color: #0056b3;
+.post-card button:hover {
+  background: #0056b3;
 }
 
-.form-group input, .form-group textarea {
-  background-color: #444;
-  border: 1px solid #555;
-  color: #f0f0f0;
+form {
+  margin: 20px 0;
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 5px;
 }
 
-.form-group input::placeholder, .form-group textarea::placeholder {
-  color: #ccc;
-}
-
-#comment-form, .comments-list {
-  display: block; 
-}
-
-#comment-form textarea {
+form input,
+form textarea {
   width: 100%;
-  height: 100px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+form button {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #218838;
+}
+
+.comments-section {
+  margin-top: 20px;
+}
+
+.comment {
+  padding: 10px;
+  background: #f9f9f9;
+  border-left: 4px solid #007bff;
   margin-bottom: 10px;
 }
 
-#comment-form button {
-  display: block;
-  margin: 0 auto;
+.comment p {
+  margin: 0;
 }
 
-.comments-list div {
-  border-bottom: 1px solid #ccc;
-  padding: 10px 0;
+/* Dashboard Styles */
+#dashboard {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#dashboard .post-card {
+  flex: 1 1 45%;
+  margin: 10px;
+}
+
+.new-post-form,
+.edit-post-form {
+  display: none;
+  flex-direction: column;
+}
+
+.edit-post-form.active,
+.new-post-form.active {
+  display: flex;
+}
+
+button.btn-new-post {
+  background: #17a2b8;
+}
+
+button.btn-new-post:hover {
+  background: #138496;
+}
+
+button.btn-edit {
+  background: #ffc107;
+}
+
+button.btn-edit:hover {
+  background: #e0a800;
+}
+
+button.btn-delete {
+  background: #dc3545;
+}
+
+button.btn-delete:hover {
+  background: #c82333;
 }

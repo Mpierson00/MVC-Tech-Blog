@@ -1,27 +1,19 @@
-<main class="container">
-  <h1>{{title}}</h1>
-  <p>By {{user.username}} on {{createdAt}}</p>
-  <div>{{content}}</div>
-
-  <section>
-    <h2>Comments</h2>
-    {{#each comments}}
-      <div>
-        <p>{{comment_text}}</p>
-        <p>By {{user.username}} on {{created_at}}</p>
-      </div>
-    {{/each}}
-
-    {{#if loggedIn}}
-      <form id="comment-form">
-        <textarea id="comment-text" name="comment_text" placeholder="Add a comment..."></textarea>
-        <button type="submit">Submit</button>
-      </form>
-    {{/if}}
-  </section>
-
-  <section>
-    {{> comments-list comments=comments}}
-    {{> comment-form}}
-  </section>
-</main>
+<h1>{{post.title}}</h1>
+<p>{{post.content}}</p>
+<h2>Comments</h2>
+<div>
+  {{#each comments}}
+    <div class="comment">
+      <p>{{comment_text}}</p>
+      <p><strong>{{user.username}}</strong></p>
+    </div>
+  {{/each}}
+</div>
+{{#if loggedIn}}
+  <form id="comment-form" data-id="{{id}}">
+    <textarea id="comment-text" placeholder="Add a comment"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+{{else}}
+  <p>Please <a href="/login">login</a> or <a href="/signup">sign up</a> to comment.</p>
+{{/if}}
